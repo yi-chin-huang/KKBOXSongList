@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		405A4407456EB6C0046DB267 /* libPods-KKBOXSongList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F4A860CA17612E790FE69E /* libPods-KKBOXSongList.a */; };
 		470B52A62538224500826C21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B52A52538224500826C21 /* AppDelegate.swift */; };
 		470B52A82538224500826C21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B52A72538224500826C21 /* SceneDelegate.swift */; };
 		470B52AA2538224500826C21 /* NewReleaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B52A92538224500826C21 /* NewReleaseViewController.swift */; };
@@ -23,12 +24,10 @@
 		470B53072539D20900826C21 /* MusicChartsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B53062539D20900826C21 /* MusicChartsViewModel.swift */; };
 		470B530D2539DA8C00826C21 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B530C2539DA8C00826C21 /* PlaylistViewController.swift */; };
 		470B53102539DC2400826C21 /* PlaylistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B530F2539DC2400826C21 /* PlaylistViewModel.swift */; };
-		7A634CFA16991CD1BBC15CE7 /* libPods-KKBOXSongList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59B81C01EFCF6481A9EE7D2F /* libPods-KKBOXSongList.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		09971E1C44BB702306D3C429 /* Pods-KKBOXSongList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKBOXSongList.release.xcconfig"; path = "Target Support Files/Pods-KKBOXSongList/Pods-KKBOXSongList.release.xcconfig"; sourceTree = "<group>"; };
-		306A5B750274618B88322180 /* Pods-KKBOXSongList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKBOXSongList.debug.xcconfig"; path = "Target Support Files/Pods-KKBOXSongList/Pods-KKBOXSongList.debug.xcconfig"; sourceTree = "<group>"; };
+		428048F4F6CFC64492F68242 /* Pods-KKBOXSongList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKBOXSongList.release.xcconfig"; path = "Target Support Files/Pods-KKBOXSongList/Pods-KKBOXSongList.release.xcconfig"; sourceTree = "<group>"; };
 		470B52A22538224500826C21 /* KKBOXSongList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KKBOXSongList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		470B52A52538224500826C21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		470B52A72538224500826C21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +46,8 @@
 		470B53062539D20900826C21 /* MusicChartsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicChartsViewModel.swift; sourceTree = "<group>"; };
 		470B530C2539DA8C00826C21 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		470B530F2539DC2400826C21 /* PlaylistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewModel.swift; sourceTree = "<group>"; };
-		59B81C01EFCF6481A9EE7D2F /* libPods-KKBOXSongList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KKBOXSongList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B988A9D7F0BDCCDD1AAB5A0 /* Pods-KKBOXSongList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKBOXSongList.debug.xcconfig"; path = "Target Support Files/Pods-KKBOXSongList/Pods-KKBOXSongList.debug.xcconfig"; sourceTree = "<group>"; };
+		80F4A860CA17612E790FE69E /* libPods-KKBOXSongList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KKBOXSongList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,17 +55,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A634CFA16991CD1BBC15CE7 /* libPods-KKBOXSongList.a in Frameworks */,
+				405A4407456EB6C0046DB267 /* libPods-KKBOXSongList.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A2E9B2A9AB50A1F6F0DE11F /* Frameworks */ = {
+		027C19254701CA7DAB09A2C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				59B81C01EFCF6481A9EE7D2F /* libPods-KKBOXSongList.a */,
+				80F4A860CA17612E790FE69E /* libPods-KKBOXSongList.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -73,8 +73,8 @@
 		304CFD8B9BFC62CF0DC2C1B1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				306A5B750274618B88322180 /* Pods-KKBOXSongList.debug.xcconfig */,
-				09971E1C44BB702306D3C429 /* Pods-KKBOXSongList.release.xcconfig */,
+				6B988A9D7F0BDCCDD1AAB5A0 /* Pods-KKBOXSongList.debug.xcconfig */,
+				428048F4F6CFC64492F68242 /* Pods-KKBOXSongList.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -85,7 +85,7 @@
 				470B52A42538224500826C21 /* KKBOXSongList */,
 				470B52A32538224500826C21 /* Products */,
 				304CFD8B9BFC62CF0DC2C1B1 /* Pods */,
-				0A2E9B2A9AB50A1F6F0DE11F /* Frameworks */,
+				027C19254701CA7DAB09A2C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,7 +152,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 470B52B62538224900826C21 /* Build configuration list for PBXNativeTarget "KKBOXSongList" */;
 			buildPhases = (
-				1499872DC1C5529A09B8CE76 /* [CP] Check Pods Manifest.lock */,
+				233A6A68F9740BFACD5DC4AE /* [CP] Check Pods Manifest.lock */,
 				470B529E2538224500826C21 /* Sources */,
 				470B529F2538224500826C21 /* Frameworks */,
 				470B52A02538224500826C21 /* Resources */,
@@ -211,7 +211,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1499872DC1C5529A09B8CE76 /* [CP] Check Pods Manifest.lock */ = {
+		233A6A68F9740BFACD5DC4AE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -389,7 +389,7 @@
 		};
 		470B52B72538224900826C21 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 306A5B750274618B88322180 /* Pods-KKBOXSongList.debug.xcconfig */;
+			baseConfigurationReference = 6B988A9D7F0BDCCDD1AAB5A0 /* Pods-KKBOXSongList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -408,7 +408,7 @@
 		};
 		470B52B82538224900826C21 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09971E1C44BB702306D3C429 /* Pods-KKBOXSongList.release.xcconfig */;
+			baseConfigurationReference = 428048F4F6CFC64492F68242 /* Pods-KKBOXSongList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -1,7 +1,4 @@
 PODS:
-  - Alamofire (5.2.2)
-  - AlamofireImage (4.1.0):
-    - Alamofire (~> 5.1)
   - KKBOXOpenAPISwift (1.1.7)
   - RxCocoa (6.0.0-rc.1):
     - RxRelay (= 6.0.0-rc.1)
@@ -11,28 +8,23 @@ PODS:
   - RxSwift (6.0.0-rc.1)
 
 DEPENDENCIES:
-  - AlamofireImage
   - KKBOXOpenAPISwift
   - RxCocoa (= 6.0.0-rc.1)
   - RxSwift (= 6.0.0-rc.1)
 
 SPEC REPOS:
   trunk:
-    - Alamofire
-    - AlamofireImage
     - KKBOXOpenAPISwift
     - RxCocoa
     - RxRelay
     - RxSwift
 
 SPEC CHECKSUMS:
-  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
-  AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
   KKBOXOpenAPISwift: 3fe3b81821d0c1d9e9ba645a9000282c8435221e
   RxCocoa: a28d75145c07b7547b85faf1e1ad8b25af88a752
   RxRelay: 56abad6d32f73567858506d08735fdb341935b9a
   RxSwift: dae1a32c48148897494b9e2a6b00a68b40694236
 
-PODFILE CHECKSUM: 7a6f76ca6f63be156087f1f6bdac7fcc4d56f84e
+PODFILE CHECKSUM: f689d19aed7bf42acddd2a46ce62173069d34fc6
 
 COCOAPODS: 1.9.3

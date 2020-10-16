@@ -53,15 +53,15 @@ class MusicChartsViewController: UIViewController {
 
 extension MusicChartsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.trackslist.count
+        return viewModel.playlists.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PlaylistsTableCell.reuseIdentifier, for: indexPath) as? PlaylistsTableCell else {
             return UITableViewCell()
         }
-        let playlist = viewModel.trackslist[indexPath.row]
-//        cell.setContent(imageUrl: playlist.images.first?.url, title: playlist.title, owner: playlist.owner.name, lastUpdateDate: playlist.lastUpdateDate)
+        let playlist = viewModel.playlists[indexPath.row]
+        cell.setContent(imageUrl: playlist.images.first?.url, title: playlist.title, owner: playlist.owner.name, lastUpdateDate: playlist.lastUpdateDate)
         return cell
     }
 }
