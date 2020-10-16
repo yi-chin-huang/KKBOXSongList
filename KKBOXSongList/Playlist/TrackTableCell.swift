@@ -9,7 +9,7 @@ import KKBOXOpenAPISwift
 import UIKit
 
 class TrackTableCell: UITableViewCell {
-    static let imageHeight: CGFloat = 50
+    static let imageHeight: CGFloat = 60
     static let imageWidth = TrackTableCell.imageHeight
     private let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()

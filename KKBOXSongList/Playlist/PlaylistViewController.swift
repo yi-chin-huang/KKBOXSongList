@@ -97,7 +97,9 @@ extension PlaylistViewController: UITableViewDataSource, UITableViewDelegate {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: PlaylistCoverCell.reuseIdentifier, for: indexPath) as? PlaylistCoverCell else {
                 return UITableViewCell()
             }
-//            cell.setIm
+            if let url = imageUrl{
+                cell.setImage(url: url)
+            }
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: TrackTableCell.reuseIdentifier, for: indexPath) as? TrackTableCell else {
@@ -105,6 +107,14 @@ extension PlaylistViewController: UITableViewDataSource, UITableViewDelegate {
             }
             cell.setContent(trackInfo: viewModel.tracksList[indexPath.row])
             return cell
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return PlaylistCoverCell.height + 20
+        } else {
+            return TrackTableCell.imageHeight + 20
         }
     }
 }
