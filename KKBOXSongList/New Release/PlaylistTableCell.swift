@@ -1,15 +1,16 @@
 //
-//  PlaylistsTableCell.swift
+//  PlaylistTableCell.swift
 //  KKBOXSongList
 //
 //  Created by Yi-Chin on 2020/10/16.
 //
 
+import KKBOXOpenAPISwift
 import UIKit
 
-class PlaylistsTableCell: UITableViewCell {
+class PlaylistTableCell: UITableViewCell {
     static let imageHeight: CGFloat = 60
-    static let imageWidth = PlaylistsTableCell.imageHeight
+    static let imageWidth = PlaylistTableCell.imageHeight
     private let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
@@ -51,13 +52,18 @@ class PlaylistsTableCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        nameLabel.text = nil
+        playlistImageView.image = nil
+    }
+    
     private func installLayout() {
         contentView.addSubview(playlistImageView)
         NSLayoutConstraint.activate([
             playlistImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             playlistImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            playlistImageView.heightAnchor.constraint(equalToConstant: PlaylistsTableCell.imageHeight),
-            playlistImageView.widthAnchor.constraint(equalToConstant: PlaylistsTableCell.imageWidth)
+            playlistImageView.heightAnchor.constraint(equalToConstant: PlaylistTableCell.imageHeight),
+            playlistImageView.widthAnchor.constraint(equalToConstant: PlaylistTableCell.imageWidth)
         ])
         
         contentView.addSubview(nameLabel)
@@ -75,10 +81,10 @@ class PlaylistsTableCell: UITableViewCell {
         ])
     }
     
-    func setContent(imageUrl: URL?, title: String, owner: String, lastUpdateDate: Date) {
-        nameLabel.text = title
-        descriptionLabel.text = "\(owner)@\(dateFormatter.string(from: lastUpdateDate))"
-        guard let url = imageUrl else { return }
+    func setContent(playlistInfo: KKPlaylistInfo) {
+        nameLabel.text = playlistInfo.title
+        descriptionLabel.text = "\(playlistInfo.owner.name)@\(dateFormatter.string(from: playlistInfo.lastUpdateDate))"
+        guard let url = playlistInfo.images.first?.url else { return }
 
         playlistImageView.loadImage(with: url)
     }

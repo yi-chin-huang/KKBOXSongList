@@ -13,10 +13,10 @@ class MusicChartsViewController: UIViewController {
     private let viewModel = MusicChartsViewModel()
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.rowHeight = PlaylistsTableCell.imageHeight + 20
+        tableView.rowHeight = PlaylistTableCell.imageHeight + 20
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(cellClass: PlaylistsTableCell.self)
+        tableView.register(cellClass: PlaylistTableCell.self)
         tableView.separatorStyle = .none
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -57,11 +57,10 @@ extension MusicChartsViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PlaylistsTableCell.reuseIdentifier, for: indexPath) as? PlaylistsTableCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PlaylistTableCell.reuseIdentifier, for: indexPath) as? PlaylistTableCell else {
             return UITableViewCell()
         }
-        let playlist = viewModel.playlists[indexPath.row]
-        cell.setContent(imageUrl: playlist.images.first?.url, title: playlist.title, owner: playlist.owner.name, lastUpdateDate: playlist.lastUpdateDate)
+        cell.setContent(playlistInfo: viewModel.playlists[indexPath.row])
         return cell
     }
 }

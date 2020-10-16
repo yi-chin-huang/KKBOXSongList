@@ -29,6 +29,16 @@ class RootViewController: UIViewController {
         setContentViewController()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        super.viewWillAppear(animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        super.viewWillDisappear(animated)
+    }
+    
     @objc func segmentControl(_ segmentControl: UISegmentedControl) {
         removeContentViewController()
         setContentViewController()

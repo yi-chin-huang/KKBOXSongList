@@ -19,11 +19,13 @@
 		470B52E12538AB2900826C21 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B52E02538AB2900826C21 /* AppConstant.swift */; };
 		470B52E42538BFEE00826C21 /* NewAlbumsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B52E32538BFEE00826C21 /* NewAlbumsCollectionCell.swift */; };
 		470B52F625397C8F00826C21 /* ImageLoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B52F525397C8E00826C21 /* ImageLoadingManager.swift */; };
-		470B52FA25399F2C00826C21 /* PlaylistsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B52F925399F2C00826C21 /* PlaylistsTableCell.swift */; };
+		470B52FA25399F2C00826C21 /* PlaylistTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B52F925399F2C00826C21 /* PlaylistTableCell.swift */; };
 		470B53032539CF0000826C21 /* MusicChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B53022539CF0000826C21 /* MusicChartsViewController.swift */; };
 		470B53072539D20900826C21 /* MusicChartsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B53062539D20900826C21 /* MusicChartsViewModel.swift */; };
 		470B530D2539DA8C00826C21 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B530C2539DA8C00826C21 /* PlaylistViewController.swift */; };
 		470B53102539DC2400826C21 /* PlaylistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B530F2539DC2400826C21 /* PlaylistViewModel.swift */; };
+		47265A1C2539FA5C0048AE9E /* TrackTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47265A1B2539FA5C0048AE9E /* TrackTableCell.swift */; };
+		47265A27253A0A220048AE9E /* PlaylistCoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47265A26253A0A220048AE9E /* PlaylistCoverCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,11 +43,13 @@
 		470B52E02538AB2900826C21 /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		470B52E32538BFEE00826C21 /* NewAlbumsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlbumsCollectionCell.swift; sourceTree = "<group>"; };
 		470B52F525397C8E00826C21 /* ImageLoadingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadingManager.swift; sourceTree = "<group>"; };
-		470B52F925399F2C00826C21 /* PlaylistsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsTableCell.swift; sourceTree = "<group>"; };
+		470B52F925399F2C00826C21 /* PlaylistTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTableCell.swift; sourceTree = "<group>"; };
 		470B53022539CF0000826C21 /* MusicChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicChartsViewController.swift; sourceTree = "<group>"; };
 		470B53062539D20900826C21 /* MusicChartsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicChartsViewModel.swift; sourceTree = "<group>"; };
 		470B530C2539DA8C00826C21 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		470B530F2539DC2400826C21 /* PlaylistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewModel.swift; sourceTree = "<group>"; };
+		47265A1B2539FA5C0048AE9E /* TrackTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableCell.swift; sourceTree = "<group>"; };
+		47265A26253A0A220048AE9E /* PlaylistCoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCoverCell.swift; sourceTree = "<group>"; };
 		6B988A9D7F0BDCCDD1AAB5A0 /* Pods-KKBOXSongList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KKBOXSongList.debug.xcconfig"; path = "Target Support Files/Pods-KKBOXSongList/Pods-KKBOXSongList.debug.xcconfig"; sourceTree = "<group>"; };
 		80F4A860CA17612E790FE69E /* libPods-KKBOXSongList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KKBOXSongList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -122,7 +126,7 @@
 				470B52A92538224500826C21 /* NewReleaseViewController.swift */,
 				470B52BA253830DF00826C21 /* NewReleaseViewModel.swift */,
 				470B52E32538BFEE00826C21 /* NewAlbumsCollectionCell.swift */,
-				470B52F925399F2C00826C21 /* PlaylistsTableCell.swift */,
+				470B52F925399F2C00826C21 /* PlaylistTableCell.swift */,
 			);
 			path = "New Release";
 			sourceTree = "<group>";
@@ -141,6 +145,8 @@
 			children = (
 				470B530C2539DA8C00826C21 /* PlaylistViewController.swift */,
 				470B530F2539DC2400826C21 /* PlaylistViewModel.swift */,
+				47265A1B2539FA5C0048AE9E /* TrackTableCell.swift */,
+				47265A26253A0A220048AE9E /* PlaylistCoverCell.swift */,
 			);
 			path = Playlist;
 			sourceTree = "<group>";
@@ -249,11 +255,13 @@
 				470B52BB253830DF00826C21 /* NewReleaseViewModel.swift in Sources */,
 				470B52F625397C8F00826C21 /* ImageLoadingManager.swift in Sources */,
 				470B52CD2538597000826C21 /* RootViewController.swift in Sources */,
+				47265A27253A0A220048AE9E /* PlaylistCoverCell.swift in Sources */,
 				470B52DE2538AAF000826C21 /* KKBOXAPIManager.swift in Sources */,
 				470B53102539DC2400826C21 /* PlaylistViewModel.swift in Sources */,
 				470B52A82538224500826C21 /* SceneDelegate.swift in Sources */,
 				470B53032539CF0000826C21 /* MusicChartsViewController.swift in Sources */,
-				470B52FA25399F2C00826C21 /* PlaylistsTableCell.swift in Sources */,
+				470B52FA25399F2C00826C21 /* PlaylistTableCell.swift in Sources */,
+				47265A1C2539FA5C0048AE9E /* TrackTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

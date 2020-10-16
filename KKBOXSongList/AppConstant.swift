@@ -29,11 +29,16 @@ extension Reusable {
 }
 
 extension UITableViewCell: Reusable {}
+extension UITableViewHeaderFooterView: Reusable {}
 extension UICollectionReusableView: Reusable {}
 
 extension UITableView {
     func register(cellClass: UITableViewCell.Type) {
         register(cellClass, forCellReuseIdentifier: cellClass.reuseIdentifier)
+    }
+    
+    func register(headerClass: UITableViewHeaderFooterView.Type) {
+        register(headerClass, forHeaderFooterViewReuseIdentifier: headerClass.reuseIdentifier)
     }
 }
 

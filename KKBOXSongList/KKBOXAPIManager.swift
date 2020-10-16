@@ -38,9 +38,23 @@ class KKBOXAPIManager {
             switch result {
             case .error(let error):
                 print("Fetching tracks in playlist failed. Error: \(error).")
-            case .success(let trackList):
-                callBack(trackList)
+            case .success(let tracksList):
+                callBack(tracksList)
                 print("Fetching tracks in playlist succeeded.")
+            }
+        })
+    }
+    
+    func fetchTracksInAlbums(albumId: String, _ callBack: @escaping (KKTrackList) -> ()) {
+        guard hasAccessToken else { return }
+        
+        _ = try? API.fetch(tracksInAlbum: albumId, callback: { result in
+            switch result {
+            case .error(let error):
+                print("Fetching tracks in album failed. Error: \(error).")
+            case .success(let tracksList):
+                callBack(tracksList)
+                print("Fetching tracks in album succeeded.")
             }
         })
     }
