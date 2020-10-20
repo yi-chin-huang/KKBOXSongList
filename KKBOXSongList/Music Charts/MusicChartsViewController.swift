@@ -63,4 +63,11 @@ extension MusicChartsViewController: UITableViewDataSource, UITableViewDelegate 
         cell.setContent(playlistInfo: viewModel.playlists[indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let playlist = viewModel.playlists[indexPath.row]
+        let playlistInfo = PlaylistInfo(type: .playlist, name: playlist.title, imageUrl: playlist.images.first?.url, id: playlist.ID)
+        let playlistController = PlaylistViewController(playlistInfo: playlistInfo)
+        navigationController?.pushViewController(playlistController, animated: true)
+    }
 }

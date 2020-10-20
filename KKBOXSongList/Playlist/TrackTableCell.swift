@@ -81,10 +81,10 @@ class TrackTableCell: UITableViewCell {
         ])
     }
     
-    func setContent(trackInfo: KKTrackInfo) {
+    func setContent(trackInfo: TrackInfo) {
         nameLabel.text = trackInfo.name
-        descriptionLabel.text = "\(trackInfo.album?.artist?.name ?? "Unknown Artist")@\(trackInfo.album?.releaseDate ?? "Unknown Release Date")"
-        guard let url = trackInfo.album?.images.first?.url else { return }
+        descriptionLabel.text = "\(trackInfo.artist ?? "Unknown Artist")@\(trackInfo.releaseDate ?? "Unknown Release Date")"
+        guard let url = trackInfo.imageUrl else { return }
 
         trackImageView.loadImage(with: url)
     }

@@ -9,7 +9,7 @@ import UIKit
 
 class PlaylistCoverCell: UITableViewCell {
     static let height: CGFloat = 120
-    private let coverImageView: UIImageView = {
+    private lazy var coverImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.backgroundColor = .lightGray

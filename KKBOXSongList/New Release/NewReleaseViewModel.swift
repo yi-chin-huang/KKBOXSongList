@@ -25,41 +25,55 @@ class NewReleaseViewModel {
     init() {
         collectionViewShouldReload = collectionViewShouldReloadRelay.asSignal()
         tableViewShouldReload = tableViewShouldReloadRelay.asSignal()
-        fetchLatestAlbum()
+        fetchLatestAlbumCategories()
         fetchFeaturedPlaylists()
     }
-
-    private func fetchLatestAlbum() {
+    
+    private func fetchLatestAlbumCategories() {
         guard KKBOXAPIManager.shared.hasAccessToken else { return }
         
-        _ = try? KKBOXAPIManager.shared.API.fetch(newReleasedAlbumsUnderCategory: "KrdH2LdyUKS8z2aoxX", limit: 10, callback: { [weak self] result in
+        _ = try? KKBOXAPIManager.shared.API.fetchNewReleaseAlbumsCategories(callback: { [weak self] result in
             switch result {
+            case .success(let newReleaseAlbumCategories):
+                guard let categoryId = newReleaseAlbumCategories.categories.first?.ID else { return }
+                
+                self?.fetchLatestAlbumsUnderCategorie(categoryId: categoryId)
             case .error(let error):
-                print("Fetching New Release Albums Categories Failed. Error: \(error).")
+                print("Fetching new release album categories failed. Error: \(error).")
+            }
+        })
+        
+    }
+    
+    private func fetchLatestAlbumsUnderCategorie(categoryId: String) {
+        guard KKBOXAPIManager.shared.hasAccessToken else { return }
+        
+        _ = try? KKBOXAPIManager.shared.API.fetch(newReleasedAlbumsUnderCategory: categoryId, limit: 10, callback: { [weak self] result in
+            switch result {
             case .success(let albums):
                 guard let albumsInfo = albums.albums?.albums else { return }
                 
                 self?.albums = albumsInfo
                 self?.collectionViewShouldReloadRelay.accept(())
-                print("Fetching New Release Albums Categories Succeeded. albums: \(albums).")
+            case .error(let error):
+                print("Fetching new release albums under category failed. Error: \(error).")
             }
         })
     }
-    
+
     func fetchFeaturedPlaylists() {
         guard playlistPageCount * lazyLoadingPageSize < playlistTotal,
               KKBOXAPIManager.shared.hasAccessToken else { return }
         
         _ = try? KKBOXAPIManager.shared.API.fetchFeaturedPlaylists(offset: playlistPageCount * lazyLoadingPageSize, limit: lazyLoadingPageSize, callback: { [weak self] result in
             switch result {
-            case .error(let error):
-                print("Fetching New Release Albums Categories Failed. Error: \(error).")
             case .success(let playListList):
                 self?.playlistTotal = playListList.summary.total
                 self?.playlists.append(contentsOf: playListList.playlists)
                 self?.playlistPageCount += 1
                 self?.tableViewShouldReloadRelay.accept(())
-                print("Fetching Featured Playlists Succeeded. playlists: \(playListList.playlists).")
+            case .error(let error):
+                print("Fetching New Release Albums Categories Failed. Error: \(error).")
             }
         })
     }

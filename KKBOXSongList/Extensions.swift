@@ -7,17 +7,6 @@
 
 import UIKit
 
-class AppConstant {
-    static let KKBOXAPIClientID = "badfec606bd902d5fb9a3208c10bf8e9"
-    static let KKBOXAPISecret = "d1aff23b93e44241171944ac2db1fa3d"
-}
-
-extension UIColor {
-    static var kkbox: UIColor {
-        return UIColor(red: 75/255, green: 167/255, blue: 205/255, alpha: 1)
-    }
-}
-
 protocol Reusable {
     static var reuseIdentifier: String { get }
 }

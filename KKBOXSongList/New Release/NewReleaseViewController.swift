@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  NewReleaseViewController.swift
 //  KKBOXSongList
 //
 //  Created by Yi-Chin on 2020/10/15.
@@ -12,18 +12,20 @@ import RxSwift
 
 class NewReleaseViewController: UIViewController {
     private let viewModel = NewReleaseViewModel()
-    private let latestAlbumLabel: UILabel = {
+    private lazy var latestAlbumLabel: UILabel = {
         let label = UILabel()
         label.text = "Latest Album Releases"
-        label.textColor = .kkbox
+        label.textColor = .systemBlue
         label.font = .boldSystemFont(ofSize: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    private let featuredPlaylistLabel: UILabel = {
+    private lazy var featuredPlaylistLabel: UILabel = {
         let label = UILabel()
         label.text = "Recent Featured Playlists"
-        label.textColor = .kkbox
+        label.textColor = .systemBlue
         label.font = .boldSystemFont(ofSize: 14)
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     private lazy var collectionView: UICollectionView = {
@@ -37,6 +39,7 @@ class NewReleaseViewController: UIViewController {
         collectionView.delegate = self
         collectionView.register(cellClass: NewAlbumsCollectionCell.self)
         collectionView.backgroundColor = .clear
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
     private lazy var tableView: UITableView = {
@@ -46,6 +49,7 @@ class NewReleaseViewController: UIViewController {
         tableView.delegate = self
         tableView.register(cellClass: PlaylistTableCell.self)
         tableView.separatorStyle = .none
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     private let disposedBag = DisposeBag()
@@ -54,7 +58,7 @@ class NewReleaseViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        installConstraits()
+        installLayout()
         setUpBindings()
     }
     
@@ -71,16 +75,14 @@ class NewReleaseViewController: UIViewController {
 
     }
     
-    private func installConstraits() {
+    private func installLayout() {
         view.addSubview(latestAlbumLabel)
-        latestAlbumLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             latestAlbumLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 15),
             latestAlbumLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30)
         ])
         
         view.addSubview(collectionView)
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: latestAlbumLabel.bottomAnchor, constant: 15),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
@@ -89,14 +91,12 @@ class NewReleaseViewController: UIViewController {
         ])
         
         view.addSubview(featuredPlaylistLabel)
-        featuredPlaylistLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             featuredPlaylistLabel.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 10),
             featuredPlaylistLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30)
         ])
         
         view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: featuredPlaylistLabel.bottomAnchor, constant: 15),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
@@ -116,9 +116,15 @@ extension NewReleaseViewController: UICollectionViewDataSource, UICollectionView
             return UICollectionViewCell()
         }
         let album = viewModel.albums[indexPath.row]
-        cell.delegate = self
-        cell.setContent(imageUrl: album.images.first?.url, title: album.name, indexPath: indexPath)
+        cell.setContent(imageUrl: album.images.first?.url, title: album.name)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let albumInfo = viewModel.albums[indexPath.row]
+        let playlistInfo = PlaylistInfo(type: .album, name: albumInfo.name, imageUrl: albumInfo.images.first?.url, id: albumInfo.ID, artist: albumInfo.artist, releaseDate: albumInfo.releaseDate)
+        let playlistController = PlaylistViewController(playlistInfo: playlistInfo)
+        navigationController?.pushViewController(playlistController, animated: true)
     }
 }
 
@@ -137,7 +143,8 @@ extension NewReleaseViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let playlist = viewModel.playlists[indexPath.row]
-        let playlistController = PlaylistViewController(type: .playlist, playlist: playlist)
+        let playlistInfo = PlaylistInfo(type: .playlist, name: playlist.title, imageUrl: playlist.images.first?.url, id: playlist.ID)
+        let playlistController = PlaylistViewController(playlistInfo: playlistInfo)
         navigationController?.pushViewController(playlistController, animated: true)
     }
     
@@ -146,11 +153,5 @@ extension NewReleaseViewController: UITableViewDataSource, UITableViewDelegate {
         if scrollView.contentOffset.y >= scrollView.contentSize.height - scrollView.frame.size.height {
             viewModel.fetchFeaturedPlaylists()
         }
-    }
-}
-
-extension NewReleaseViewController: NewAlbumsCollectionCellDelegate {
-    func reload(indexPath: IndexPath) {
-        collectionView.reloadItems(at: [indexPath])
     }
 }

@@ -26,12 +26,11 @@ class MusicChartsViewModel {
         
         _ = try? KKBOXAPIManager.shared.API.fetchCharts(callback: { [weak self] result in
             switch result {
-            case .error(let error):
-                print("Fetching Charts Failed. Error: \(error).")
             case .success(let charts):
                 self?.playlists = charts.playlists
                 self?.tableViewShouldReloadRelay.accept(())
-                print("Fetching Charts Succeeded. Charts: \(charts.playlists).")
+            case .error(let error):
+                print("Fetching Charts Failed. Error: \(error).")
             }
         })
     }

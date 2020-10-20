@@ -18,20 +18,20 @@ class PlaylistTableCell: UITableViewCell {
         dateFormatter.locale = Locale(identifier: "ja_JP")
         return dateFormatter
     }()
-    private let playlistImageView: UIImageView = {
+    private lazy var playlistImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .lightGray
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
-    private let nameLabel: UILabel = {
+    private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12)
         label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    private let descriptionLabel: UILabel = {
+    private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12)
         label.numberOfLines = 1

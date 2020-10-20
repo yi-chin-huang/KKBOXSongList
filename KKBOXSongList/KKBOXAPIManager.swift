@@ -1,17 +1,15 @@
 //
-//  ViewModel.swift
+//  KKBOXAPIManager.swift
 //  KKBOXSongList
 //
 //  Created by Yi-Chin on 2020/10/15.
 //
 
 import KKBOXOpenAPISwift
-import RxCocoa
-import RxSwift
 
 class KKBOXAPIManager {
     static let shared = KKBOXAPIManager()
-    let API = KKBOXOpenAPI(clientID: AppConstant.KKBOXAPIClientID, secret: AppConstant.KKBOXAPISecret)
+    let API = KKBOXOpenAPI(clientID: "badfec606bd902d5fb9a3208c10bf8e9", secret: "d1aff23b93e44241171944ac2db1fa3d")
     var hasAccessToken: Bool {
         return API.accessToken != nil
     }
@@ -24,38 +22,10 @@ class KKBOXAPIManager {
         _ = try? API.fetchAccessTokenByClientCredential { result in
             switch result {
             case .error(let error):
-                print("Fetching Access Token Failed. Error: \(error).")
+                print("Fetching access token failed. Error: \(error).")
             case .success(_):
-                print("Fetching Access Token Succeeded.")
+                print("Fetching access token succeeded.")
             }
         }
-    }
-    
-    func fetchTracksInPlaylist(playlistId: String, _ callBack: @escaping (KKTrackList) -> ()) {
-        guard hasAccessToken else { return }
-        
-        _ = try? API.fetch(tracksInPlaylist: playlistId, callback: { result in
-            switch result {
-            case .error(let error):
-                print("Fetching tracks in playlist failed. Error: \(error).")
-            case .success(let tracksList):
-                callBack(tracksList)
-                print("Fetching tracks in playlist succeeded.")
-            }
-        })
-    }
-    
-    func fetchTracksInAlbums(albumId: String, _ callBack: @escaping (KKTrackList) -> ()) {
-        guard hasAccessToken else { return }
-        
-        _ = try? API.fetch(tracksInAlbum: albumId, callback: { result in
-            switch result {
-            case .error(let error):
-                print("Fetching tracks in album failed. Error: \(error).")
-            case .success(let tracksList):
-                callBack(tracksList)
-                print("Fetching tracks in album succeeded.")
-            }
-        })
     }
 }
