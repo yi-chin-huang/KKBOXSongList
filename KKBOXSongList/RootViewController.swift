@@ -10,7 +10,6 @@ import UIKit
 class RootViewController: UIViewController {    
     private var pageTabControllers: [UIViewController] = PageTab.allCases.map { $0.viewController }
     private lazy var contentViewController = pageTabControllers[segmentControl.selectedSegmentIndex]
-    
     private lazy var segmentControl: UISegmentedControl = {
         let segmentItems = PageTab.allCases.map({ $0.title })
         let control = UISegmentedControl(items: segmentItems)

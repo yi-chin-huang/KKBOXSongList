@@ -16,7 +16,7 @@
 		470B52CD2538597000826C21 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B52CC2538597000826C21 /* RootViewController.swift */; };
 		470B52D825386AE700826C21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 470B52D625386AE700826C21 /* LaunchScreen.storyboard */; };
 		470B52DE2538AAF000826C21 /* KKBOXAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B52DD2538AAEF00826C21 /* KKBOXAPIManager.swift */; };
-		470B52E12538AB2900826C21 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B52E02538AB2900826C21 /* Extensions.swift */; };
+		470B52E12538AB2900826C21 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B52E02538AB2900826C21 /* Reusable.swift */; };
 		470B52E42538BFEE00826C21 /* NewAlbumsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B52E32538BFEE00826C21 /* NewAlbumsCollectionCell.swift */; };
 		470B52F625397C8F00826C21 /* ImageLoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B52F525397C8E00826C21 /* ImageLoadingManager.swift */; };
 		470B52FA25399F2C00826C21 /* PlaylistTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 470B52F925399F2C00826C21 /* PlaylistTableCell.swift */; };
@@ -41,7 +41,7 @@
 		470B52CC2538597000826C21 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		470B52D725386AE700826C21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		470B52DD2538AAEF00826C21 /* KKBOXAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KKBOXAPIManager.swift; sourceTree = "<group>"; };
-		470B52E02538AB2900826C21 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		470B52E02538AB2900826C21 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		470B52E32538BFEE00826C21 /* NewAlbumsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlbumsCollectionCell.swift; sourceTree = "<group>"; };
 		470B52F525397C8E00826C21 /* ImageLoadingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadingManager.swift; sourceTree = "<group>"; };
 		470B52F925399F2C00826C21 /* PlaylistTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTableCell.swift; sourceTree = "<group>"; };
@@ -110,8 +110,8 @@
 				470B52A72538224500826C21 /* SceneDelegate.swift */,
 				470B52CC2538597000826C21 /* RootViewController.swift */,
 				470B52DD2538AAEF00826C21 /* KKBOXAPIManager.swift */,
-				470B52E02538AB2900826C21 /* Extensions.swift */,
 				470B52F525397C8E00826C21 /* ImageLoadingManager.swift */,
+				470B52E02538AB2900826C21 /* Reusable.swift */,
 				470B53002539CE7B00826C21 /* New Release */,
 				470B53012539CEA500826C21 /* Music Charts */,
 				470B530B2539DA5900826C21 /* Playlist */,
@@ -254,7 +254,7 @@
 				470B52E42538BFEE00826C21 /* NewAlbumsCollectionCell.swift in Sources */,
 				470B53072539D20900826C21 /* MusicChartsViewModel.swift in Sources */,
 				470B530D2539DA8C00826C21 /* PlaylistViewController.swift in Sources */,
-				470B52E12538AB2900826C21 /* Extensions.swift in Sources */,
+				470B52E12538AB2900826C21 /* Reusable.swift in Sources */,
 				470B52BB253830DF00826C21 /* NewReleaseViewModel.swift in Sources */,
 				470B52F625397C8F00826C21 /* ImageLoadingManager.swift in Sources */,
 				470B52CD2538597000826C21 /* RootViewController.swift in Sources */,
