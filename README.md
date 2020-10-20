@@ -11,7 +11,7 @@ When a user scrolls to the bottom, the list load 10 more playlists automatically
 #### Playlist Page
 When users click any playlist/album on the page, they can see tracks in the playlist.
 
-<img src="/demo/new_release_lazy_loading..gif" width="300" height="612"/>
+<img src="/demo/new_release_lazy_loading.gif" width="300" height="612"/>
 
 #### Song Web Page
 When users click any track on the playlist page, they can see detailed song information in the KKBOX web page.
